@@ -1,14 +1,27 @@
 /* Reset */
 .jbook,.jbook *{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;line-height:1}
 /* */
-
 .jbook{
 	position:fixed;
 	top:0;bottom:0;left:0;right:0;
-	
-	
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;	
 }
-
+.jbook.grabbable{
+	cursor:hand;
+	cursor:grab;
+	cursor:-moz-grab;
+	cursor:-webkit-grab;
+}
+.jbook.grabbable.grabbing{
+	cursor:grabbing;
+	cursor:-moz-grabbing;
+	cursor:-webkit-grabbing;
+}
 .jbook .pageContainer{
 	position:relative;
 	left:0;
@@ -18,11 +31,7 @@
 	display:-webkit-box; /* Safari and Chrome */
 	display:-ms-flexbox; /* Internet Explorer 10 */
 	display:box;
-	/*-webkit-box-align: start;
-    -moz-box-align: start;
-    box-align: start;*/
 }
-
 .jbook .pageContainer .page{
 	position:relative;
 	-moz-box-flex:1.0; /* Firefox */
@@ -32,19 +41,9 @@
 	width:0;
 	overflow: hidden;
 }
-
-.jbook .pageContainer .page .sprite{
-	
+.jbook .pageContainer .page .sprite{	
 	position:absolute;
-	top:10%;
-	left:70%;
-	width:45%;
-	height:80%;
-	background:#3F3;
-	
 }
-
-
 
 
 

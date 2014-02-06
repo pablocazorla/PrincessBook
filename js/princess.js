@@ -1,5 +1,4 @@
-$('document').ready(function(){
-	
+$('document').ready(function(){	
 	var princessBook = jbook(),
 		page0 = jpage({
 			selection:'.page0',
@@ -11,25 +10,52 @@ $('document').ready(function(){
 				{
 					selection : '#sprite1',
 					moveX : '100:10',
-					opacity : '0:0,10:1',
+					moveY : '0:5,100:60',
+					opacity : '0:0,40:1',
+					scale : '0:1,60:0.5,100:0.5',
+					rotate : '45:45'
+				},{
+					selection : '#sprite3',
+					opacity : '80:1,100:0'
+				},{
+					selection : '#sprite2',
+					moveX : '100:20',
+					moveY : '100:90',
+					opacity : '80:0.1',
+					scale : '0:1,60:0.5,100:0.5',
+					rotate : '75:-45',
+					blur : '20:5',
+					saturate : '40:0'
+				}
+			],
+			actions : [
+				{
+					time : 60,
+					action : function(){
+						$('#sprite3').animate({'left':'2%'},4000);
+					}
 				}
 			]
 		}),
 		page2 = jpage({
 			selection:'.page2',
-			duration : 1000});
-		/*page1 = jpage({selection:'.page1',duration : 1600}),
-		page2 = jpage({selection:'.page2',duration : 800}),
-		page3 = jpage({selection:'.page3',duration : 2600}),
-		page4 = jpage({selection:'.page4',duration : 400}),
-		page5 = jpage({selection:'.page5',duration : 2100});*/
+			duration : 2000,
+			animations : [
+				{
+					selection : '#sprite4',
+					moveX : '100:10',
+					opacity : '0:0,40:1',
+					scale : '0:1,60:0.5,100:0.5',
+					rotate : '45:45'
+				},{
+					selection : '#sprite5',
+					moveX : '100:30',
+					opacity : '80:0.1',
+					scale : '0:1,60:0.5,100:0.5',
+					rotate : '75:-45'
+				}
+			]			
+		});
 	
-	princessBook
-	.addPage(page0).addPage(page1).addPage(page2);
-	/*
-	.addPage(page2)
-	.addPage(page3)
-	.addPage(page4)
-	.addPage(page5);*/
-
+	princessBook.addPage(page0).addPage(page1).addPage(page2).start();
 });
